@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ccf4be01ed5d4fbdb0efa94ee7fffaa7" Name="Diagram1">
-        <EntityTypeShape EntityType="Parcial2VcyModel.Canal" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+      <Diagram DiagramId="38d3191a92cc4350b05fbf64437220e9" Name="Diagram1">
+        <EntityTypeShape EntityType="Parcial2VcyModel.Canal" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Parcial2VcyModel.HorarioPrograma" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="Parcial2VcyModel.fk_HorarioPrograma_Canal" ManuallyRouted="false" />
       </Diagram>

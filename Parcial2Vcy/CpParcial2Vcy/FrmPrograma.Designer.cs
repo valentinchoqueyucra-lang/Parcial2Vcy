@@ -36,7 +36,15 @@
             this.txtParametro = new System.Windows.Forms.TextBox();
             this.gbxLista = new System.Windows.Forms.GroupBox();
             this.pnlAcciones = new System.Windows.Forms.Panel();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
+            this.lblTipo = new System.Windows.Forms.Label();
+            this.mtbxHoraInicio = new System.Windows.Forms.MaskedTextBox();
             this.txtConductorPrincipal = new System.Windows.Forms.TextBox();
             this.txtDiaSemana = new System.Windows.Forms.TextBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
@@ -48,13 +56,6 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblCanal = new System.Windows.Forms.Label();
-            this.mtbxHoraInicio = new System.Windows.Forms.MaskedTextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.erpCanal = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpFrecuencia = new System.Windows.Forms.ErrorProvider(this.components);
@@ -62,6 +63,7 @@
             this.erpHoraInicio = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpDiaSemana = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpConductorPrincipal = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbxTipo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.gbxLista.SuspendLayout();
             this.pnlAcciones.SuspendLayout();
@@ -105,7 +107,7 @@
             this.lblParametro.AutoSize = true;
             this.lblParametro.Location = new System.Drawing.Point(12, 67);
             this.lblParametro.Name = "lblParametro";
-            this.lblParametro.Size = new System.Drawing.Size(313, 20);
+            this.lblParametro.Size = new System.Drawing.Size(264, 17);
             this.lblParametro.TabIndex = 2;
             this.lblParametro.Text = "Buscar por Nombre, Frecuencia  o Título";
             // 
@@ -114,7 +116,7 @@
             this.txtParametro.Location = new System.Drawing.Point(331, 64);
             this.txtParametro.MaxLength = 50;
             this.txtParametro.Name = "txtParametro";
-            this.txtParametro.Size = new System.Drawing.Size(543, 27);
+            this.txtParametro.Size = new System.Drawing.Size(543, 23);
             this.txtParametro.TabIndex = 3;
             this.txtParametro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParametro_KeyPress);
             // 
@@ -141,128 +143,6 @@
             this.pnlAcciones.Name = "pnlAcciones";
             this.pnlAcciones.Size = new System.Drawing.Size(247, 210);
             this.pnlAcciones.TabIndex = 10;
-            // 
-            // gbxDatos
-            // 
-            this.gbxDatos.Controls.Add(this.mtbxHoraInicio);
-            this.gbxDatos.Controls.Add(this.txtConductorPrincipal);
-            this.gbxDatos.Controls.Add(this.txtDiaSemana);
-            this.gbxDatos.Controls.Add(this.txtTitulo);
-            this.gbxDatos.Controls.Add(this.txtFrecuencia);
-            this.gbxDatos.Controls.Add(this.cbxCanal);
-            this.gbxDatos.Controls.Add(this.lblConductorPrincipal);
-            this.gbxDatos.Controls.Add(this.lblDiaSemana);
-            this.gbxDatos.Controls.Add(this.lblHoraInicio);
-            this.gbxDatos.Controls.Add(this.lblTitulo);
-            this.gbxDatos.Controls.Add(this.label1);
-            this.gbxDatos.Controls.Add(this.lblCanal);
-            this.gbxDatos.Location = new System.Drawing.Point(22, 341);
-            this.gbxDatos.Name = "gbxDatos";
-            this.gbxDatos.Size = new System.Drawing.Size(704, 210);
-            this.gbxDatos.TabIndex = 11;
-            this.gbxDatos.TabStop = false;
-            this.gbxDatos.Text = "Datos";
-            // 
-            // txtConductorPrincipal
-            // 
-            this.txtConductorPrincipal.Location = new System.Drawing.Point(494, 154);
-            this.txtConductorPrincipal.Name = "txtConductorPrincipal";
-            this.txtConductorPrincipal.Size = new System.Drawing.Size(196, 27);
-            this.txtConductorPrincipal.TabIndex = 10;
-            // 
-            // txtDiaSemana
-            // 
-            this.txtDiaSemana.Location = new System.Drawing.Point(494, 99);
-            this.txtDiaSemana.Name = "txtDiaSemana";
-            this.txtDiaSemana.Size = new System.Drawing.Size(196, 27);
-            this.txtDiaSemana.TabIndex = 9;
-            // 
-            // txtTitulo
-            // 
-            this.txtTitulo.Location = new System.Drawing.Point(106, 161);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(216, 27);
-            this.txtTitulo.TabIndex = 8;
-            // 
-            // txtFrecuencia
-            // 
-            this.txtFrecuencia.Location = new System.Drawing.Point(106, 96);
-            this.txtFrecuencia.Name = "txtFrecuencia";
-            this.txtFrecuencia.Size = new System.Drawing.Size(216, 27);
-            this.txtFrecuencia.TabIndex = 7;
-            // 
-            // cbxCanal
-            // 
-            this.cbxCanal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxCanal.FormattingEnabled = true;
-            this.cbxCanal.Location = new System.Drawing.Point(106, 37);
-            this.cbxCanal.Name = "cbxCanal";
-            this.cbxCanal.Size = new System.Drawing.Size(216, 28);
-            this.cbxCanal.TabIndex = 6;
-            // 
-            // lblConductorPrincipal
-            // 
-            this.lblConductorPrincipal.AutoSize = true;
-            this.lblConductorPrincipal.Location = new System.Drawing.Point(337, 161);
-            this.lblConductorPrincipal.Name = "lblConductorPrincipal";
-            this.lblConductorPrincipal.Size = new System.Drawing.Size(161, 20);
-            this.lblConductorPrincipal.TabIndex = 5;
-            this.lblConductorPrincipal.Text = "Conductor Principal:";
-            // 
-            // lblDiaSemana
-            // 
-            this.lblDiaSemana.AutoSize = true;
-            this.lblDiaSemana.Location = new System.Drawing.Point(337, 99);
-            this.lblDiaSemana.Name = "lblDiaSemana";
-            this.lblDiaSemana.Size = new System.Drawing.Size(151, 20);
-            this.lblDiaSemana.TabIndex = 4;
-            this.lblDiaSemana.Text = "Día De la Semana:";
-            // 
-            // lblHoraInicio
-            // 
-            this.lblHoraInicio.AutoSize = true;
-            this.lblHoraInicio.Location = new System.Drawing.Point(337, 40);
-            this.lblHoraInicio.Name = "lblHoraInicio";
-            this.lblHoraInicio.Size = new System.Drawing.Size(118, 20);
-            this.lblHoraInicio.TabIndex = 3;
-            this.lblHoraInicio.Text = "Hora de Inicio:";
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(6, 161);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(55, 20);
-            this.lblTitulo.TabIndex = 2;
-            this.lblTitulo.Text = "Título:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 99);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Frecuencia:";
-            // 
-            // lblCanal
-            // 
-            this.lblCanal.AutoSize = true;
-            this.lblCanal.Location = new System.Drawing.Point(6, 40);
-            this.lblCanal.Name = "lblCanal";
-            this.lblCanal.Size = new System.Drawing.Size(57, 20);
-            this.lblCanal.TabIndex = 0;
-            this.lblCanal.Text = "Canal:";
-            // 
-            // mtbxHoraInicio
-            // 
-            this.mtbxHoraInicio.Location = new System.Drawing.Point(494, 40);
-            this.mtbxHoraInicio.Margin = new System.Windows.Forms.Padding(4);
-            this.mtbxHoraInicio.Mask = "00:00";
-            this.mtbxHoraInicio.Name = "mtbxHoraInicio";
-            this.mtbxHoraInicio.Size = new System.Drawing.Size(196, 27);
-            this.mtbxHoraInicio.TabIndex = 45;
-            this.mtbxHoraInicio.ValidatingType = typeof(System.DateTime);
             // 
             // btnCancelar
             // 
@@ -348,6 +228,139 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // gbxDatos
+            // 
+            this.gbxDatos.Controls.Add(this.cbxTipo);
+            this.gbxDatos.Controls.Add(this.lblTipo);
+            this.gbxDatos.Controls.Add(this.mtbxHoraInicio);
+            this.gbxDatos.Controls.Add(this.txtConductorPrincipal);
+            this.gbxDatos.Controls.Add(this.txtDiaSemana);
+            this.gbxDatos.Controls.Add(this.txtTitulo);
+            this.gbxDatos.Controls.Add(this.txtFrecuencia);
+            this.gbxDatos.Controls.Add(this.cbxCanal);
+            this.gbxDatos.Controls.Add(this.lblConductorPrincipal);
+            this.gbxDatos.Controls.Add(this.lblDiaSemana);
+            this.gbxDatos.Controls.Add(this.lblHoraInicio);
+            this.gbxDatos.Controls.Add(this.lblTitulo);
+            this.gbxDatos.Controls.Add(this.label1);
+            this.gbxDatos.Controls.Add(this.lblCanal);
+            this.gbxDatos.Location = new System.Drawing.Point(22, 341);
+            this.gbxDatos.Name = "gbxDatos";
+            this.gbxDatos.Size = new System.Drawing.Size(704, 210);
+            this.gbxDatos.TabIndex = 11;
+            this.gbxDatos.TabStop = false;
+            this.gbxDatos.Text = "Datos";
+            // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Location = new System.Drawing.Point(7, 161);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(40, 17);
+            this.lblTipo.TabIndex = 46;
+            this.lblTipo.Text = "Tipo:";
+            // 
+            // mtbxHoraInicio
+            // 
+            this.mtbxHoraInicio.Location = new System.Drawing.Point(494, 40);
+            this.mtbxHoraInicio.Margin = new System.Windows.Forms.Padding(4);
+            this.mtbxHoraInicio.Mask = "00:00";
+            this.mtbxHoraInicio.Name = "mtbxHoraInicio";
+            this.mtbxHoraInicio.Size = new System.Drawing.Size(196, 23);
+            this.mtbxHoraInicio.TabIndex = 45;
+            this.mtbxHoraInicio.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtConductorPrincipal
+            // 
+            this.txtConductorPrincipal.Location = new System.Drawing.Point(494, 154);
+            this.txtConductorPrincipal.Name = "txtConductorPrincipal";
+            this.txtConductorPrincipal.Size = new System.Drawing.Size(196, 23);
+            this.txtConductorPrincipal.TabIndex = 10;
+            // 
+            // txtDiaSemana
+            // 
+            this.txtDiaSemana.Location = new System.Drawing.Point(494, 99);
+            this.txtDiaSemana.Name = "txtDiaSemana";
+            this.txtDiaSemana.Size = new System.Drawing.Size(196, 23);
+            this.txtDiaSemana.TabIndex = 9;
+            // 
+            // txtTitulo
+            // 
+            this.txtTitulo.Location = new System.Drawing.Point(106, 124);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(216, 23);
+            this.txtTitulo.TabIndex = 8;
+            // 
+            // txtFrecuencia
+            // 
+            this.txtFrecuencia.Location = new System.Drawing.Point(106, 84);
+            this.txtFrecuencia.Name = "txtFrecuencia";
+            this.txtFrecuencia.Size = new System.Drawing.Size(216, 23);
+            this.txtFrecuencia.TabIndex = 7;
+            // 
+            // cbxCanal
+            // 
+            this.cbxCanal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCanal.FormattingEnabled = true;
+            this.cbxCanal.Location = new System.Drawing.Point(106, 37);
+            this.cbxCanal.Name = "cbxCanal";
+            this.cbxCanal.Size = new System.Drawing.Size(216, 25);
+            this.cbxCanal.TabIndex = 6;
+            // 
+            // lblConductorPrincipal
+            // 
+            this.lblConductorPrincipal.AutoSize = true;
+            this.lblConductorPrincipal.Location = new System.Drawing.Point(337, 161);
+            this.lblConductorPrincipal.Name = "lblConductorPrincipal";
+            this.lblConductorPrincipal.Size = new System.Drawing.Size(135, 17);
+            this.lblConductorPrincipal.TabIndex = 5;
+            this.lblConductorPrincipal.Text = "Conductor Principal:";
+            // 
+            // lblDiaSemana
+            // 
+            this.lblDiaSemana.AutoSize = true;
+            this.lblDiaSemana.Location = new System.Drawing.Point(337, 99);
+            this.lblDiaSemana.Name = "lblDiaSemana";
+            this.lblDiaSemana.Size = new System.Drawing.Size(126, 17);
+            this.lblDiaSemana.TabIndex = 4;
+            this.lblDiaSemana.Text = "Día De la Semana:";
+            // 
+            // lblHoraInicio
+            // 
+            this.lblHoraInicio.AutoSize = true;
+            this.lblHoraInicio.Location = new System.Drawing.Point(337, 40);
+            this.lblHoraInicio.Name = "lblHoraInicio";
+            this.lblHoraInicio.Size = new System.Drawing.Size(99, 17);
+            this.lblHoraInicio.TabIndex = 3;
+            this.lblHoraInicio.Text = "Hora de Inicio:";
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Location = new System.Drawing.Point(7, 127);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(47, 17);
+            this.lblTitulo.TabIndex = 2;
+            this.lblTitulo.Text = "Título:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 87);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Frecuencia:";
+            // 
+            // lblCanal
+            // 
+            this.lblCanal.AutoSize = true;
+            this.lblCanal.Location = new System.Drawing.Point(6, 40);
+            this.lblCanal.Name = "lblCanal";
+            this.lblCanal.Size = new System.Drawing.Size(48, 17);
+            this.lblCanal.TabIndex = 0;
+            this.lblCanal.Text = "Canal:";
+            // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -386,9 +399,18 @@
             // 
             this.erpConductorPrincipal.ContainerControl = this;
             // 
+            // cbxTipo
+            // 
+            this.cbxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTipo.FormattingEnabled = true;
+            this.cbxTipo.Location = new System.Drawing.Point(106, 158);
+            this.cbxTipo.Name = "cbxTipo";
+            this.cbxTipo.Size = new System.Drawing.Size(216, 25);
+            this.cbxTipo.TabIndex = 47;
+            // 
             // FrmPrograma
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1000, 563);
@@ -456,6 +478,8 @@
         private System.Windows.Forms.ErrorProvider erpHoraInicio;
         private System.Windows.Forms.ErrorProvider erpDiaSemana;
         private System.Windows.Forms.ErrorProvider erpConductorPrincipal;
+        private System.Windows.Forms.Label lblTipo;
+        private System.Windows.Forms.ComboBox cbxTipo;
     }
 }
 

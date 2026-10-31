@@ -22,6 +22,7 @@ namespace CadParcial2Vcy
         public string diaSemana { get; set; }
         public string conductorPrincipal { get; set; }
         public short estado { get; set; }
+        public string tipo { get; set; }
     
         public virtual Canal Canal { get; set; }
     }

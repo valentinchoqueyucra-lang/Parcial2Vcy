@@ -13,7 +13,8 @@ namespace ClnParcial2Vcy
         {
             using (var context = new Parcial2VcyEntities())
             {
-                var existe = context.HorarioPrograma.Where(x => x.idCanal == horarioPrograma.idCanal).FirstOrDefault();
+                var existe = context.HorarioPrograma.Where(x => x.idCanal == horarioPrograma.idCanal)
+                    .FirstOrDefault();
                 if (existe != null) throw new Exception("El canal ya existe");
 
                 context.HorarioPrograma.Add(horarioPrograma);
@@ -35,6 +36,7 @@ namespace ClnParcial2Vcy
                 existe.horaFin = horarioPrograma.horaInicio;
                 existe.diaSemana = horarioPrograma.diaSemana;
                 existe.estado = horarioPrograma.estado;
+                existe.tipo = horarioPrograma.tipo;
 
                 return context.SaveChanges();
 

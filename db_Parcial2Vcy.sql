@@ -37,12 +37,15 @@ CREATE TABLE HorarioPrograma(
     CONSTRAINT fk_HorarioPrograma_Canal FOREIGN KEY(idCanal) REFERENCES Canal(id)
 );
 
+
+ALTER TABLE HorarioPrograma ADD tipo VARCHAR(30) NOT NULL;
+
 GO
 DROP PROC IF EXISTS paHorarioProgramaListar;
 GO
 CREATE PROC paHorarioProgramaListar @parametro VARCHAR(50)
 AS
-    SELECT hp.id, hp.idCanal, c.nombre AS canal, c.frecuencia , hp.titulo, hp.horaInicio, hp.diaSemana, hp.conductorPrincipal, hp.estado
+    SELECT hp.id, hp.idCanal, c.nombre AS canal, c.frecuencia , hp.titulo, hp.tipo , hp.horaInicio, hp.diaSemana, hp.conductorPrincipal, hp.estado
     FROM HorarioPrograma hp
     INNER JOIN Canal c ON c.id = hp.idCanal
     WHERE hp.estado = 1 AND hp.titulo + hp.diaSemana + hp.conductorPrincipal + c.nombre LIKE '%' + REPLACE(@parametro, ' ', '%') + '%'
@@ -59,31 +62,30 @@ VALUES
 ('ATB',           'Canal 9 VHF',   1),
 ('Bolivisión',    'Canal 5 VHF',   1);
 
-INSERT INTO HorarioPrograma (idCanal, titulo, horaInicio, horaFin, diaSemana, conductorPrincipal, estado)
+INSERT INTO HorarioPrograma (idCanal, titulo, horaInicio, horaFin, diaSemana, conductorPrincipal, estado, tipo)
 VALUES
-(1, 'El Mañanero', '06:00:00', '09:30:00', 'Lunes','Luisito Comunica (invitado)', 1),
-(1, 'El Mañanero', '06:00:00', '09:30:00', 'Martes', 'Equipo Red Uno',    1),
-(1, 'El Mañanero', '06:00:00', '09:30:00', 'Miércoles', 'Equipo Red Uno',    1),
-(1, 'El Mañanero', '06:00:00', '09:30:00', 'Jueves','Equipo Red Uno',    1),
-(1, 'El Mañanero', '06:00:00', '09:30:00', 'Viernes', 'Equipo Red Uno',    1),
+(1, 'El Mañanero', '06:00:00', '09:30:00', 'Lunes', 'Luisito Comunica (invitado)', 1, 'Farandula'),
+(1, 'El Mañanero', '06:00:00', '09:30:00', 'Martes', 'Equipo Red Uno', 1, 'Farandula'),
+(1, 'El Mañanero', '06:00:00', '09:30:00', 'Miércoles', 'Equipo Red Uno', 1, 'Farandula'),
+(1, 'El Mañanero', '06:00:00', '09:30:00', 'Jueves', 'Equipo Red Uno', 1, 'Farandula'),
+(1, 'El Mañanero', '06:00:00', '09:30:00', 'Viernes', 'Equipo Red Uno', 1, 'Farandula'),
 
-(2, 'Telepaís', '19:00:00', '20:30:00', 'Lunes','Carolina Córdova',  1),
-(2, 'Telepaís', '19:00:00', '20:30:00', 'Martes', 'Carolina Córdova',  1),
-(2, 'Telepaís', '19:00:00', '20:30:00', 'Miércoles', 'Carolina Córdova',  1),
-(2, 'Telepaís', '19:00:00', '20:30:00', 'Jueves',  'Carolina Córdova',  1),
-(2, 'Telepaís', '19:00:00', '20:30:00', 'Viernes', 'Carolina Córdova',  1),
+(2, 'Telepaís', '19:00:00', '20:30:00', 'Lunes', 'Carolina Córdova', 1, 'Farandula'),
+(2, 'Telepaís', '19:00:00', '20:30:00', 'Martes', 'Carolina Córdova', 1, 'Farandula'),
+(2, 'Telepaís', '19:00:00', '20:30:00', 'Miércoles', 'Carolina Córdova', 1, 'Farandula'),
+(2, 'Telepaís', '19:00:00', '20:30:00', 'Jueves', 'Carolina Córdova', 1, 'Farandula'),
+(2, 'Telepaís', '19:00:00', '20:30:00', 'Viernes', 'Carolina Córdova', 1, 'Farandula'),
 
-(3, 'La Mañana de Todos','06:30:00', '09:30:00', 'Lunes', 'Equipo ATB',        1),
-(3, 'La Mañana de Todos','06:30:00', '09:30:00', 'Martes', 'Equipo ATB',        1),
-(3, 'La Mañana de Todos', '06:30:00', '09:30:00', 'Miércoles', 'Equipo ATB',        1),
-(3, 'La Mañana de Todos', '06:30:00', '09:30:00', 'Jueves', 'Equipo ATB',        1),
-(3, 'La Mañana de Todos', '06:30:00', '09:30:00', 'Viernes', 'Equipo ATB',        1),
+(3, 'La Mañana de Todos', '06:30:00', '09:30:00', 'Lunes', 'Equipo ATB', 1, 'Cocina'),
+(3, 'La Mañana de Todos', '06:30:00', '09:30:00', 'Martes', 'Equipo ATB', 1, 'Cocina'),
+(3, 'La Mañana de Todos', '06:30:00', '09:30:00', 'Miércoles', 'Equipo ATB', 1, 'Cocina'),
+(3, 'La Mañana de Todos', '06:30:00', '09:30:00', 'Jueves', 'Equipo ATB', 1, 'Cocina'),
+(3, 'La Mañana de Todos', '06:30:00', '09:30:00', 'Viernes', 'Equipo ATB', 1, 'Cocina'),
 
-(4, 'Noticiero Bolivisión', '19:00:00', '20:00:00', 'Lunes', 'Equipo Bolivisión', 1),
-(4, 'Noticiero Bolivisión', '19:00:00', '20:00:00', 'Martes', 'Equipo Bolivisión', 1),
-(4, 'Noticiero Bolivisión', '19:00:00', '20:00:00', 'Miércoles', 'Equipo Bolivisión', 1),
-(4, 'Noticiero Bolivisión',  '19:00:00', '20:00:00', 'Jueves', 'Equipo Bolivisión', 1),
-(4, 'Noticiero Bolivisión', '19:00:00', '20:00:00', 'Viernes', 'Equipo Bolivisión', 1);
+(4, 'Noticiero Bolivisión', '19:00:00', '20:00:00', 'Lunes', 'Equipo Bolivisión', 1, 'Farandula'),
+(4, 'Noticiero Bolivisión', '19:00:00', '20:00:00', 'Martes', 'Equipo Bolivisión', 1, 'Farandula'),
+(4, 'Noticiero Bolivisión', '19:00:00', '20:00:00', 'Miércoles', 'Equipo Bolivisión', 1, 'Farandula'),
+(4, 'Noticiero Bolivisión', '19:00:00', '20:00:00', 'Jueves', 'Equipo Bolivisión', 1, 'Farandula');
 
 SELECT * FROM Canal;
 SELECT * FROM HorarioPrograma;

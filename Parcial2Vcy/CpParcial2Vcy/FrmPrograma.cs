@@ -29,6 +29,7 @@ namespace CpParcial2Vcy
             dgvLista.Columns["estado"].Visible = false;
             dgvLista.Columns["canal"].HeaderText = "Canal";
             dgvLista.Columns["frecuencia"].HeaderText = "Frecuencia";
+            dgvLista.Columns["tipo"].HeaderText = "Tipo";
             dgvLista.Columns["titulo"].HeaderText = "Título";
             dgvLista.Columns["horaInicio"].HeaderText = "Hora Inicio";
             dgvLista.Columns["diaSemana"].HeaderText = "Día Semana";

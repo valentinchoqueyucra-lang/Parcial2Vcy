@@ -26,6 +26,7 @@
           <Property Name="diaSemana" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="conductorPrincipal" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="estado" Type="smallint" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <Association Name="fk_HorarioPrograma_Canal">
           <End Role="Canal" Type="Self.Canal" Multiplicity="1" />
@@ -77,6 +78,7 @@
           <Property Name="diaSemana" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="conductorPrincipal" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="estado" Type="Int16" Nullable="false" />
+          <Property Name="tipo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Canal" Relationship="Self.fk_HorarioPrograma_Canal" FromRole="HorarioPrograma" ToRole="Canal" />
         </EntityType>
         <Association Name="fk_HorarioPrograma_Canal">
@@ -108,6 +110,7 @@
           <Property Type="String" Name="canal" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="frecuencia" Nullable="false" MaxLength="20" />
           <Property Type="String" Name="titulo" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="tipo" Nullable="false" MaxLength="30" />
           <Property Type="Time" Name="horaInicio" Nullable="false" />
           <Property Type="String" Name="diaSemana" Nullable="false" MaxLength="20" />
           <Property Type="String" Name="conductorPrincipal" Nullable="false" MaxLength="100" />
@@ -140,6 +143,7 @@
                 <ScalarProperty Name="diaSemana" ColumnName="diaSemana" />
                 <ScalarProperty Name="conductorPrincipal" ColumnName="conductorPrincipal" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -151,6 +155,7 @@
                 <ScalarProperty Name="canal" ColumnName="canal" />
                 <ScalarProperty Name="frecuencia" ColumnName="frecuencia" />
                 <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
                 <ScalarProperty Name="horaInicio" ColumnName="horaInicio" />
                 <ScalarProperty Name="diaSemana" ColumnName="diaSemana" />
                 <ScalarProperty Name="conductorPrincipal" ColumnName="conductorPrincipal" />

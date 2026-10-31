@@ -18,6 +18,7 @@ namespace CadParcial2Vcy
         public string canal { get; set; }
         public string frecuencia { get; set; }
         public string titulo { get; set; }
+        public string tipo { get; set; }
         public System.TimeSpan horaInicio { get; set; }
         public string diaSemana { get; set; }
         public string conductorPrincipal { get; set; }
